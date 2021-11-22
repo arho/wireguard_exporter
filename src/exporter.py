@@ -1,5 +1,6 @@
 # Nothing of value yet!
-from prometheus_client import start_http_server, Gauge, Counter, Summary
+from prometheus_client import start_http_server
+from prometheus_client import Gauge
 import time
 from processing import processing
 scrape_timer = 1
@@ -25,15 +26,6 @@ def set_peer_rx():
     print(gathers[2])
     for i in gathers[2]:
         g_peerrx.labels(wginterface=f'{str(i[0])}',peer=f'{str(i[1])}').set(int(i[2]))
-
-
-REQUEST_TIME = Summary('request_processing_seconds', 'Time spent processing request')
-
-
-
-
-# Get count of online users
-
 
 
 # Main Loop
