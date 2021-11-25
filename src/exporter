@@ -24,7 +24,6 @@ def set_peer_tx():
 
 def set_peer_rx():
     gathers = processing()
-    print(gathers[2])
     for i in gathers[2]:
         g_peerrx.labels(wginterface=f'{str(i[0])}',peer=f'{str(i[1])}').set(int(i[2]))
 
